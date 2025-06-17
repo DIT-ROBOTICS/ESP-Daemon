@@ -101,13 +101,8 @@ The system uses a numeric command system through the `/sima/start` topic:
    ```bash
    # Format: ros2 topic pub /sima/start std_msgs/msg/Int16 "{data: <command>}"
    
-   # Send command to all SIMA devices (0-9)
+   # Send command to all SIMA devices
    ros2 topic pub /sima/start std_msgs/msg/Int16 "{data: 5}"
-   
-   # Send command to specific SIMA device (10-49)
-   # Format: (address_index + 1) * 10 + command
-   # Example: Send command 3 to SIMA_02 (address_index = 1)
-   ros2 topic pub /sima/start std_msgs/msg/Int16 "{data: 13}"
    ```
 
 2. Monitor system status:
