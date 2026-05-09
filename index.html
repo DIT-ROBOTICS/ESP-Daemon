@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html class="dark-mode" lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>ESP-Daemon Flasher</title>
+    <link rel="icon" type="image/svg+xml" href="icon.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+  </head>
+  <body>
+    <header class="topnav">
+      <div class="topnav-brand">
+        <img src="icon.svg" alt="ESP-Daemon" class="brand-icon">
+        <div class="brand-copy">
+          <p class="brand-kicker">Firmware Utility</p>
+          <h1>ESP-Daemon Flasher</h1>
+        </div>
+      </div>
+      <div class="topnav-actions">
+        <div class="topnav-meta" aria-label="Flasher metadata">
+          <span class="meta-chip" id="metaStatusChip">
+            <span class="meta-label">Status</span>
+            <span class="meta-dot" id="metaStatusDot" aria-hidden="true"></span>
+            <span class="meta-value" id="metaStatus">Online</span>
+          </span>
+        </div>
+        <button type="button" class="theme-toggle" id="themeBtn" aria-label="Switch theme">Light</button>
+      </div>
+    </header>
+
+    <main class="content page-shell">
+      <section class="card card--hero" aria-labelledby="firmwareInfoTitle">
+        <p class="card-title card-title--info" id="firmwareInfoTitle">
+          Firmware Info
+        </p>
+        <div class="status-item">
+          <span class="status-item__label"><span class="material-icons icon-small" aria-hidden="true">new_releases</span>Version</span>
+          <span class="status-item__value" id="version">Loading...</span>
+        </div>
+        <div class="status-item">
+          <span class="status-item__label"><span class="material-icons icon-small" aria-hidden="true">sd_storage</span>Size</span>
+          <span class="status-item__value" id="firmware-size">Loading...</span>
+        </div>
+        <div class="status-item">
+          <span class="status-item__label"><span class="material-icons icon-small" aria-hidden="true">schedule</span>Timestamp</span>
+          <span class="status-item__value" id="timestamp">Loading...</span>
+        </div>
+        <div class="status-item status-item--wrap">
+          <span class="status-item__label"><span class="material-icons icon-small" aria-hidden="true">fingerprint</span>Firmware MD5</span>
+          <span class="status-item__value status-item__value--mono" id="firmware-md5">Loading...</span>
+        </div>
+        <button type="button" class="btn btn-secondary" id="refreshBtn"><span class="material-icons icon-inline" aria-hidden="true">refresh</span>REFRESH</button>
+      </section>
+
+      <section class="card" aria-labelledby="flashTitle">
+        <p class="card-title card-title--flash" id="flashTitle">
+          FLASH
+        </p>
+        <div class="flash-mode-switch" role="group" aria-label="Firmware mode">
+          <button type="button" class="mode-btn" id="modeProductBtn" data-mode="product" aria-pressed="true">ESP-Daemon</button>
+          <button type="button" class="mode-btn" id="modeEstopBtn" data-mode="estop" aria-pressed="false">E-STOP</button>
+        </div>
+        <div class="install-wrapper">
+          <esp-web-install-button id="installBtn" manifest="manifest-product.json">
+            <button class="btn btn-primary" slot="activate"><span class="material-icons icon-inline" aria-hidden="true">usb</span>CONNECT &amp; FLASH</button>
+            <span class="flash-support-message" slot="unsupported">Your browser does not support Web Serial. Use Chrome or Edge 89+.</span>
+            <span class="flash-support-message" slot="not-allowed">Serial permission is blocked. Allow serial access and reload.</span>
+          </esp-web-install-button>
+        </div>
+        <p class="hint hint--flash">Requires Chrome/Edge 89+. Hold BOOT on the board if prompted.</p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>ESP-Daemon Firmware Flasher</p>
+      <p>Copyright © 2026 <a href="https://github.com/SeanChangX" target="_blank" rel="noopener noreferrer">SCX</a>. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

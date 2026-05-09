@@ -1,0 +1,49 @@
+{
+  "version": "v2.4.4",
+  "timestamp": "2026-05-09T17:12:32Z",
+  "default": "product",
+  "variants": {
+    "product": {
+      "label": "ESP-Daemon",
+      "firmware": "firmware-esp-daemon.bin",
+      "filesystem": "filesystem-esp-daemon.bin"
+    },
+    "estop": {
+      "label": "ESP-Daemon E-STOP",
+      "firmware": "firmware-e-stop.bin",
+      "filesystem": "filesystem-e-stop.bin"
+    }
+  },
+  "files": {
+    "firmware-esp-daemon.bin": {
+      "url": "firmware-esp-daemon.bin",
+      "size": 1428272,
+      "md5": "4136f584d5ee1670d333f84d0c0938dd"
+    },
+    "firmware-e-stop.bin": {
+      "url": "firmware-e-stop.bin",
+      "size": 1477296,
+      "md5": "848f7d7bf4de29c50210f80f4d978281"
+    },
+    "filesystem-esp-daemon.bin": {
+      "url": "filesystem-esp-daemon.bin",
+      "size": 524288,
+      "md5": "6588d1b17804fab46a732dd4f44d27b7"
+    },
+    "filesystem-e-stop.bin": {
+      "url": "filesystem-e-stop.bin",
+      "size": 524288,
+      "md5": "7ed5b175999964012737caf9f5d49686"
+    },
+    "bootloader.bin": {
+      "url": "bootloader.bin",
+      "size": 19440,
+      "md5": "b461869304208fd75b402bbde9c24019"
+    },
+    "partitions.bin": {
+      "url": "partitions.bin",
+      "size": 3072,
+      "md5": "005b654be3e0b7b9d8a4b2ccb2ec145e"
+    }
+  }
+}
