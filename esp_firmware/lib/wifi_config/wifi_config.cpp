@@ -224,7 +224,7 @@ void configureNetWizard() {
   }
 
   netWizard.setStrategy(NetWizardStrategy::NON_BLOCKING);
-  netWizard.setConnectTimeout(15000);
+  netWizard.setConnectTimeout(5000);
   // NetWizard treats timeout=0 as immediate timeout. Use a very large timeout
   // to keep portal available effectively "forever" for field provisioning.
   netWizard.setPortalTimeout(0xFFFFFFFFUL);
